@@ -44,6 +44,12 @@ use:hover {
     filter: invert(1);
 }
 
+#g1 text {
+    font-size: 3rem;
+    font-style: italic;
+    letter-spacing: 1rem;
+}
+
 [rainbow] {
     animation: rainbow-stroke 3s linear infinite alternate;
 }

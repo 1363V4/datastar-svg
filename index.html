@@ -63,10 +63,15 @@
             fill="none"
             stroke-linecap="round"
             >
-                <use
-                href="#path1"
-                data-attr-fill="'url(' + $fill + ')'"
-                />
+                <g
+                id="g1"
+                >
+                    <use
+                    href="#path1"
+                    data-attr-fill="'url(' + $fill + ')'"
+                    />
+                    <text x="200" y="50" data-text="$time < 250 ? 'kiki' : 'booba'" stroke-width="1"></text>
+                </g>
                 <use
                 href="#path2"
                 data-attr-stroke-dasharray="$outline"
