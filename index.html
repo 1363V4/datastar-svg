@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module" src="https://cdn.jsdelivr.net/gh/starfederation/datastar@1.0.0-beta.11/bundles/datastar.js"></script>
+    <link rel="stylesheet" href="main.css">
+    <script src="https://cdn.jsdelivr.net/npm/animejs/lib/anime.iife.min.js"></script>
+    <script>
+    const { animate, svg } = anime;
+    </script>
+</head>
+<body>
+    <svg style="display: none">
+
+    </svg>
+    <header>🤯 KIKI = BOOBA ??! 🤯</header>
+    <main>
+        <div id="input-container">
+            <input type="number" data-bind-width value="8" min="1" max="20">
+            <input type="checkbox" data-bind-rainbow>
+            <select data-bind-fill>
+                <option value="">nofill</option>
+                <option value="#lg1">french</option>
+                <option value="#lg2">spanish</option>
+            </select>
+            <select data-bind-outline>
+                <option value="none">solid</option>
+                <option value="10, 10">dashed</option>
+                <option value="2, 2">dotted</option>
+            </select>
+            <button data-on-click="
+            animate(svg1, {
+                scale: 1.02,
+                filter: 'drop-shadow(2px 2px 2px black)',
+                loop: true,
+                alternate: true,
+            });
+            ">🤯</button>
+            <input type="range" data-bind-time value="0" min="0" max="500" data-on-raf="animation.seek($time)">
+        </div>
+        <div id="svg-container">
+            <svg
+            id="svg1"
+            width="600"
+            height="300"
+            stroke="red"
+            data-attr-stroke-width="$width"
+            data-attr-rainbow="$rainbow"
+            fill="none"
+            stroke-linecap="round"
+            >
+            <defs>
+                <linearGradient id="lg1">
+                    <stop offset="0%" stop-color="blue" />
+                    <stop offset="50%" stop-color="white" />
+                    <stop offset="100%" stop-color="red" />
+                </linearGradient>
+                <linearGradient id="lg2" gradientTransform="rotate(90)">
+                    <stop offset="0%" stop-color="red" />
+                    <stop offset="50%" stop-color="yellow" />
+                    <stop offset="100%" stop-color="red" />
+                </linearGradient>
+                <path id="path1" d="M50,50 L70,30 L90,45 L110,25 L130,50 L150,30 L170,55 L150,70 L170,90 L150,110 L170,130 L145,140 L125,120 L105,145 L85,120 L65,140 L45,120 L30,100 L50,80 L30,60 Z"/>
+                <path id="path2" d="M350,90 C370,60 400,60 420,80 C450,60 480,70 490,100 C510,120 500,150 480,160 C490,180 470,200 440,190 C420,210 380,210 360,190 C330,200 320,170 330,150 C310,130 330,90 350,90 Z"/>
+            </defs>
+            <use
+            href="#path1"
+            data-attr-fill="'url(' + $fill + ')'"
+            />
+            <use
+            href="#path2"
+            data-attr-stroke-dasharray="$outline"
+            />
+            </svg>
+        </div>
+    </main>
+    <script>
+        const animation = animate(path1, {
+            d: svg.morphTo(path2),
+            duration: 5000,
+            autoplay: false,
+        });
+    </script>
+</body>
+</html>

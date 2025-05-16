@@ -1,0 +1,66 @@
+@import url("https://unpkg.com/open-props/normalize.min.css") layer(normalize);
+
+
+body {
+    font-family: monospace;
+}
+
+header {
+    place-self: center;
+    font-weight: bold;
+    font-size: 4rem;
+    padding-bottom: 1rem;
+}
+
+main {
+    display: grid;
+    grid-template-rows: 5rem 1fr;
+    overflow: hidden;
+    place-content: center;
+    place-items: center;
+}
+
+#input-container {
+    display: flex;
+    gap: 1rem;
+    padding: 0 1rem 1rem 1rem;
+    border-bottom: 1px solid blue;
+    border-bottom-right-radius: 5rem;
+    border-bottom-left-radius: 5rem;
+    margin-bottom: 2rem;
+}
+
+#svg-container {
+    display: grid;
+}
+
+[rainbow] {
+    animation: rainbow-stroke 10s linear infinite alternate;
+}
+
+@keyframes rainbow-stroke {
+    0% {
+        stroke: hsl(0, 100%, 50%);
+    }
+    14% {
+        stroke: hsl(42, 100%, 50%);
+    }
+    28% {
+        stroke: hsl(84, 100%, 50%);
+    }
+    42% {
+        stroke: hsl(126, 100%, 50%);
+    }
+    57% {
+        stroke: hsl(168, 100%, 50%);
+    }
+    71% {
+        stroke: hsl(210, 100%, 50%);
+    }
+    85% {
+        stroke: hsl(252, 100%, 50%);
+    }
+    100% {
+        stroke: hsl(294, 100%, 50%);
+    }
+}
