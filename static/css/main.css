@@ -23,19 +23,29 @@ main {
 #input-container {
     display: flex;
     gap: 1rem;
-    padding: 0 1rem 1rem 1rem;
-    border-bottom: 1px solid blue;
+    padding: 0 2rem 1rem 2rem;
+    border-bottom: 2px solid blue;
     border-bottom-right-radius: 5rem;
     border-bottom-left-radius: 5rem;
     margin-bottom: 2rem;
 }
 
 #svg-container {
-    display: grid;
+    height: 20rem;
+    width: 100vw;
+}
+
+svg {
+    width: 100%;
+    height: 100%;
+}
+
+use:hover {
+    filter: invert(1);
 }
 
 [rainbow] {
-    animation: rainbow-stroke 10s linear infinite alternate;
+    animation: rainbow-stroke 3s linear infinite alternate;
 }
 
 @keyframes rainbow-stroke {

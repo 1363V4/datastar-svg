@@ -3,18 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>D* SVG</title>
     <script type="module" src="https://cdn.jsdelivr.net/gh/starfederation/datastar@1.0.0-beta.11/bundles/datastar.js"></script>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="static/css/main.css">
     <script src="https://cdn.jsdelivr.net/npm/animejs/lib/anime.iife.min.js"></script>
     <script>
     const { animate, svg } = anime;
     </script>
 </head>
 <body>
-    <svg style="display: none">
-
-    </svg>
     <header>🤯 KIKI = BOOBA ??! 🤯</header>
     <main>
         <div id="input-container">
@@ -27,13 +24,13 @@
             </select>
             <select data-bind-outline>
                 <option value="none">solid</option>
-                <option value="10, 10">dashed</option>
-                <option value="2, 2">dotted</option>
+                <option value="20, 10">dashed</option>
+                <option value="5, 20">dotted</option>
             </select>
             <button data-on-click="
             animate(svg1, {
                 scale: 1.02,
-                filter: 'drop-shadow(2px 2px 2px black)',
+                filter: 'drop-shadow(2px 0px 2px black)',
                 loop: true,
                 alternate: true,
             });
@@ -43,13 +40,7 @@
         <div id="svg-container">
             <svg
             id="svg1"
-            width="600"
-            height="300"
-            stroke="red"
-            data-attr-stroke-width="$width"
-            data-attr-rainbow="$rainbow"
-            fill="none"
-            stroke-linecap="round"
+            viewBox="0 0 600 250"
             >
             <defs>
                 <linearGradient id="lg1">
@@ -65,14 +56,22 @@
                 <path id="path1" d="M50,50 L70,30 L90,45 L110,25 L130,50 L150,30 L170,55 L150,70 L170,90 L150,110 L170,130 L145,140 L125,120 L105,145 L85,120 L65,140 L45,120 L30,100 L50,80 L30,60 Z"/>
                 <path id="path2" d="M350,90 C370,60 400,60 420,80 C450,60 480,70 490,100 C510,120 500,150 480,160 C490,180 470,200 440,190 C420,210 380,210 360,190 C330,200 320,170 330,150 C310,130 330,90 350,90 Z"/>
             </defs>
-            <use
-            href="#path1"
-            data-attr-fill="'url(' + $fill + ')'"
-            />
-            <use
-            href="#path2"
-            data-attr-stroke-dasharray="$outline"
-            />
+            <g
+            stroke="red"
+            data-attr-stroke-width="$width"
+            data-attr-rainbow="$rainbow"
+            fill="none"
+            stroke-linecap="round"
+            >
+                <use
+                href="#path1"
+                data-attr-fill="'url(' + $fill + ')'"
+                />
+                <use
+                href="#path2"
+                data-attr-stroke-dasharray="$outline"
+                />
+            </g>
             </svg>
         </div>
     </main>
