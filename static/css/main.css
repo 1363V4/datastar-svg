@@ -48,6 +48,7 @@ use:hover {
     font-size: 3rem;
     font-style: italic;
     letter-spacing: 1rem;
+    mix-blend-mode: multiply;
 }
 
 [rainbow] {

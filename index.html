@@ -70,7 +70,9 @@
                     href="#path1"
                     data-attr-fill="'url(' + $fill + ')'"
                     />
-                    <text x="200" y="50" data-text="$time < 250 ? 'kiki' : 'booba'" stroke-width="1"></text>
+                    <text stroke="black" stroke-width="1" paint-order="stroke fill markers">
+                        <textPath data-text="$time < 250 ? 'kiki' : 'booba'" href="#path1"></textPath>
+                    </text>
                 </g>
                 <use
                 href="#path2"
