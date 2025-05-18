@@ -6,7 +6,7 @@
     --text: black;
 }
 
-#dark-mode:checked {
+@media (prefers-color-scheme: dark) {
     :root {
         --bg: #1c1c1c;
         --text: #e0e0e0;
