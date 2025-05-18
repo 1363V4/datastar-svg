@@ -15,7 +15,6 @@
     <header>🤯 KIKI = BOOBA ??! 🤯</header>
     <main>
         <div id="input-container">
-            <input id="dark-mode" type="checkbox">
             <input type="number" data-bind-width value="8" min="1" max="20">
             <input type="checkbox" data-bind-rainbow>
             <select data-bind-fill>
@@ -36,12 +35,16 @@
                 alternate: true,
             });
             ">🤯</button>
-            <input type="range" data-bind-time value="0" min="0" max="500" data-on-raf="animation.seek($time)">
+            <input type="range" data-bind-zoom min="-200" max="0">
+            <input type="range" data-signals-time="0" data-bind-time min=0 max=5000 data-on-raf="animation.seek($time)">
         </div>
         <div id="svg-container">
             <svg
             id="svg1"
-            viewBox="0 0 600 250"
+            data-computed-vb.width="600 - $zoom"
+            data-computed-vb.heigth="250 - $zoom"
+            data-attr="{'viewBox': [0, 0, 600, $vb.heigth].join(' ')}"
+            preserveAspectRatio="xMidYMid slice"
             >
             <defs>
                 <linearGradient id="lg1">
