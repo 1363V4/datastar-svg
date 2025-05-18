@@ -15,6 +15,7 @@
     <header>🤯 KIKI = BOOBA ??! 🤯</header>
     <main>
         <div id="input-container">
+            <input type="checkbox" data-bind-labels>
             <input type="number" data-bind-width value="8" min="1" max="20">
             <input type="checkbox" data-bind-rainbow>
             <select data-bind-fill>
@@ -75,7 +76,10 @@
                     data-attr-fill="'url(' + $fill + ')'"
                     />
                     <text stroke-width="1" paint-order="stroke fill markers">
-                        <textPath data-text="$time < 250 ? 'kiki' : 'booba'" href="#path1"></textPath>
+                        <textPath 
+                        data-show="$labels"
+                        data-text="($time < 1000 && 'kiki') || ($time < 3000 && 'booki') || 'booba'"
+                        href="#path1"></textPath>
                     </text>
                 </g>
                 <use

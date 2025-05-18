@@ -47,6 +47,7 @@ main {
 #svg-container {
     display: grid;
     height: 30rem;
+    padding-top: 2rem;
 }
 
 svg {
