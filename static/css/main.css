@@ -59,6 +59,7 @@ use:hover {
 }
 
 #g1 text {
+    stroke: var(--text);
     font-size: 3rem;
     font-style: italic;
     letter-spacing: 1rem;
